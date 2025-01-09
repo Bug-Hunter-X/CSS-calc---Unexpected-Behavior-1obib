@@ -1,0 +1,11 @@
+To fix this, ensure that all units within a `calc()` expression are consistent or appropriately converted. When using percentages, be mindful of whether they are relative to the element's own dimensions or the parent element's dimensions. 
+
+For the example `calc(100% - 10px)`, if you intend for the `100%` to refer to the element's dimensions, you might need to adjust your layout strategy or use JavaScript to calculate the value dynamically. A potential solution for more predictable behavior in nested layouts might involve using `vw` or `vh` units instead of percentages.  For unit mixing, you'll need to convert to a common unit (e.g., using em or px as a base).
+
+Example of correction:
+Instead of `calc(50% + 10em)`  you can use a more predictable and consistent approach like:
+
+```css
+width:calc(50% + 100px); /* Assuming 1em is roughly 16px */
+```
+Always double-check unit compatibility and operator precedence to prevent unexpected layout issues.
